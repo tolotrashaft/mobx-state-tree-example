@@ -4,6 +4,7 @@ import './index.css'
 import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
 import { WishList } from './models/WishList'
+import makeInspectable from 'mobx-devtools-mst'
 
 const wishList = WishList.create({
   items: [
@@ -19,6 +20,8 @@ const wishList = WishList.create({
     }
   ]
 })
+
+makeInspectable(wishList)
 
 ReactDOM.render(<App wishList={wishList}/>, document.getElementById('root'))
 setInterval(() => wishList.items[0].changePrice(wishList.items[0].price + 10.0), 1000)
