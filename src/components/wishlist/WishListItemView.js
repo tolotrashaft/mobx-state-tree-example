@@ -1,13 +1,16 @@
 import React from 'react'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import Avatar from '@material-ui/core/Avatar'
+import ImageIcon from '@material-ui/icons/Image'
 
 const WishListItemView = ({ item }) => (
-  <li className='item'>
-    {item.image && <img style={{ width: 60, height: 90 }} src={item.image} alt=''/>}
-    <div>
-      <h3>{item.name}</h3>
-      <span>{item.price.toFixed(2)}</span>
-    </div>
-  </li>
+  <ListItem>
+    <Avatar src={item.image} alt="">
+      <ImageIcon />
+    </Avatar>
+    <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+  </ListItem>
 )
 
 export default WishListItemView

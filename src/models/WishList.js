@@ -7,9 +7,9 @@ export const WishListItem = types
     image: types.optional(types.string, '')
   })
   .actions(self => ({
-    changeName: (newName) => self.name = newName,
-    changePrice: (newPrice) => self.price = newPrice,
-    changeImage: (newImage) => self.image = newImage
+    changeName: newName => (self.name = newName),
+    changePrice: newPrice => (self.price = newPrice),
+    changeImage: newImage => (self.image = newImage)
   }))
 
 export const WishList = types
@@ -17,7 +17,7 @@ export const WishList = types
     items: types.optional(types.array(WishListItem), [])
   })
   .actions(self => ({
-    addItem: (item) => (self.items.push(item))
+    addItem: item => self.items.push(item)
   }))
   .views(self => ({
     get totalPrice() {

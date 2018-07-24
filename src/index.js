@@ -1,9 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
-import App from './components/App'
 import registerServiceWorker from './registerServiceWorker'
+import { Route, Router, Switch } from 'react-router-dom'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+import routes from './routes'
+import { createBrowserHistory } from 'history'
+
+const history = createBrowserHistory()
+
+ReactDOM.render(
+  <Router history={history}>
+    <Switch>
+      {routes.map((props, key) => <Route {...props} key={key} />)}
+    </Switch>
+  </Router>,
+  document.getElementById('root')
+)
 
 registerServiceWorker()

@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.4.1",
+    "@material-ui/icons": "^2.0.0",
     "axios": "^0.18.0",
+    "history": "^4.7.2",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
     "mobx-state-tree": "^2.2.0",
@@ -11,12 +14,20 @@
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
     "whatwg-fetch": "2.0.3"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom"
+  },
+  "quokka": {
+    "babel": true,
+    "presets": [
+      "es2017",
+      "react"
+    ]
   },
   "devDependencies": {
     "autoprefixer": "7.1.6",
