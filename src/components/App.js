@@ -1,20 +1,17 @@
-import React, { Component } from 'react'
-import CharacterListView from './characters/CharacterListView'
-import logo from '../logo.svg'
-import './App.css'
+import React, { Component } from "react";
+import "./App.css";
+import CharacterListView from "./characters/CharacterListView";
+import Header from "./Header";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">MobX State Tree example</h1>
-        </header>
+        <Header />
         <CharacterListView />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
